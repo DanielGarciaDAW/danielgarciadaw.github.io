@@ -9,9 +9,15 @@ body {
 }
 /*<-----------------  HEADER ----------------->*/
 .pf-nav-bar {
+  width:50%;
+  height: 100vh;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   list-style: none;
+}
+.pf-header-icon{
+  font-size: 3em;
 }
 
 
