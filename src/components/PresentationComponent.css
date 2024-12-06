@@ -1,4 +1,28 @@
-/* block-$ */
+/* block-Content */
+.pf-presentation-content {
+    /*height: 50vh;*/
+}
+
+.pf-presentation {
+    text-align: left;
+    width: 40%;
+}
+
+.pf-presentation-title {
+    font-size: 2em;
+    margin: 0 0 0 2rem;
+    color: #b23bbd;
+    font-weight: bold;
+}
+
+.pf-presentation-description {
+    font-size: 1.5em;
+    margin: 0 0 0 2rem;
+    color: #623bbd;
+    font-weight: bold;
+}
+
+/* block-reveal */
 .block-reveal {
     --t: calc(var(--td) + var(--d));
 
@@ -7,9 +31,16 @@
 
     position: relative;
     overflow: hidden;
+}
 
+.pf-presentation-title {
     animation: revealBlock 0s var(--t) forwards;
 }
+
+.pf-presentation-description {
+    animation: revealBlock2 0s var(--t) forwards;
+}
+
 
 .block-reveal::after {
     content: '';
@@ -29,7 +60,13 @@
 /* animations */
 @keyframes revealBlock {
     100% {
-        color: white;
+        color: #b23bbd;
+    }
+}
+
+@keyframes revealBlock2 {
+    100% {
+        color: #623bbd;
     }
 }
 

@@ -39,23 +39,6 @@ body {
 }
 
 /*<--------------------- PRESENTACION ------------------>*/
-.pf-presentation{
-  text-align: left;
-  width:40%;
-     
-}
-.pf-presentation-title{
-  font-size: 2em;
-  margin: 0  0 0 2rem;
-  color: #b23bbd;
-  font-weight: bold;
-}
-.pf-presentation-description{
-  font-size: 1.5em;
-  margin: 0  0 0 2rem;
-  color: #623bbd;
-  font-weight: bold;
-}
 
 
 /*<-----------------  ROTACION ----------------->*/

@@ -1,6 +1,8 @@
 import './App.css'
 import { HeaderComponent } from './components/HeaderComponent'
 import { PresentationComponent } from './components/PresentationComponent'
+import { ProyectsComponent } from './components/ProyectsComponent'
+import { SkillComponent } from './components/SkillComponent'
 
 function App() {
 
@@ -11,7 +13,9 @@ function App() {
         <hr className="demomento"/>
         <PresentationComponent />
         <hr className="demomento"/>
-        
+        <SkillComponent />
+        <hr className="demomento"/>
+        <ProyectsComponent />
       </main>
     </>
   )

@@ -1,0 +1,47 @@
+.pf-skill {
+    display: flex;
+    flex-direction: column;
+    /*height: 50vh;*/
+}
+
+.pf-skill-title {
+    font-size: 2em;
+    color: #b23bbd;
+    font-weight: bold;
+    margin: 0 0 2rem 2rem;
+}
+
+.pf-skill-content-contain {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 2rem;
+}
+
+.pf-skill-content-contain {
+    display: flex;
+    align-content: space-between;
+}
+
+.pf-skill-list {
+    display: flex;
+    gap: 1rem;
+}
+
+.pf-skill-list li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: .4em .8em;
+    border: 1px solid #b23bbd;
+    border-radius: 8px;
+    color: #623bbd;
+    margin: 0.5em 0;
+    font-weight: bold;
+
+}
+
+
+.pf-skill-list span {
+    font-size: 2em;
+    margin-right: 1rem;
+}
