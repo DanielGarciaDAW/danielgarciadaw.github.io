@@ -1,23 +1,60 @@
 * {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
 }
 
 body {
-  text-align: center;
   font-family: 'Inter', sans-serif;
 }
+.demomento{
+  margin: 2em;
+}
 /*<-----------------  HEADER ----------------->*/
-.pf-nav-bar {
-  width:50%;
-  height: 100vh;
-  display: flex;
+.pf-header{
+  padding:0;
+  display:flex;
   justify-content: space-around;
   align-items: center;
+}
+.pf-header-logo span:first-child{
+  font-size: 2em;
+  color: #b23bbd;
+  font-weight: bold;
+}
+.pf-header-logo span:last-child{
+  font-size: 2em;
+  color: #623bbd;
+  font-weight: bold;
+}
+
+.pf-header-nav-bar {
+  display: flex;
+  justify-content: space-around;
   list-style: none;
 }
+
 .pf-header-icon{
   font-size: 3em;
+  margin: 1em;
+}
+
+/*<--------------------- PRESENTACION ------------------>*/
+.pf-presentation{
+  text-align: left;
+  width:40%;
+     
+}
+.pf-presentation-title{
+  font-size: 2em;
+  margin: 0  0 0 2rem;
+  color: #b23bbd;
+  font-weight: bold;
+}
+.pf-presentation-description{
+  font-size: 1.5em;
+  margin: 0  0 0 2rem;
+  color: #623bbd;
+  font-weight: bold;
 }
 
 
