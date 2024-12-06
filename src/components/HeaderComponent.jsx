@@ -7,7 +7,7 @@ export function HeaderComponent() {
                 <li>
                     <IconComponent
                         icono="fa-solid fa-file-pdf"
-                        link="public/assets/DanielGarcia.pdf" />
+                        link="../public/assets/DanielGarcia.pdf" />
                 </li>
                 <li>
                     <IconComponent
