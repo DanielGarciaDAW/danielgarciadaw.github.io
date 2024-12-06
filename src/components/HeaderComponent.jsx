@@ -19,11 +19,7 @@ export function HeaderComponent() {
                         icono="fa-brands fa-github"
                         link="https://github.com/DanielGarciaDaw" />
                 </li>
-                <li>
-                    <IconComponent
-                        icono="fa-brands fa-twitter"
-                        link="" />
-                </li>
+
 
             </ul>
         </header>
