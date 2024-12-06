@@ -3,15 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://github.com/DanielGarciaDAW/danielgarciadaw.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "homepage": "https://github.com/DanielGarciaDAW/danielgarciadaw.github.io"
-
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.3.1",
