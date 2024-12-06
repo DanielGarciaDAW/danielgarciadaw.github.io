@@ -16,6 +16,8 @@ function App() {
         <SkillComponent />
         <hr className="demomento"/>
         <ProyectsComponent />
+
+        
       </main>
     </>
   )
