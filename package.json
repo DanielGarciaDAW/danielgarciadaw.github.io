@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://danielgarciadaw.github.io",
+  "homepage": "https://danidev.es",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
