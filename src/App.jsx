@@ -10,6 +10,8 @@ function App() {
   return (
     <>
       <main className="main-content">
+        <h1>Daniel García Guerrero</h1>
+        <h2>Frontend Developer</h2>
         <HeaderComponent />
       </main>
     </>
