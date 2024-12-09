@@ -11,34 +11,42 @@
     margin: 0 0 2rem 2rem;
 }
 
-.pf-skill-content-contain {
+.pf-skill-content {
     display: flex;
     flex-direction: column;
+    width: 94%;
     margin: 0 0 0 2rem;
+    margin-right: 2rem;
 }
 
 .pf-skill-content-contain {
     display: flex;
+    flex-direction: column;
     align-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .pf-skill-list {
     display: flex;
+    align-content: space-between;
+    width: 100%;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .pf-skill-list li {
     list-style: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: .4em .8em;
     border: 1px solid #b23bbd;
     border-radius: 8px;
     color: #623bbd;
     margin: 0.5em 0;
     font-weight: bold;
-
+    flex:1;
 }
 
 .pf-skill-list span {

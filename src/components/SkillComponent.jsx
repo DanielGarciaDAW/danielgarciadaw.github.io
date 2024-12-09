@@ -31,14 +31,14 @@ export function SkillComponent() {
                         <ButtonComponent lenguaje="React" icon="fa-js" onClick={handleButtonClick} />
                     </ul>
                 </div>
-                {/*<div className="pf-skill-content-contain">
+                <div className="pf-skill-content-contain">
                     <ul className="pf-skill-list">
-                        <li><span className="fa-brands fa-php" />PHP</li>
-                        <li><span className="fa-brands fa-java" />JAVA</li>
-                        <li><span className="fa fa-power-off" />SPRING BOOT</li>
-                        <li><span className="fa-brands fa-laravel" />LARAVEL</li>
+                        <ButtonComponent lenguaje="PHP" icon="fa-php" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="JAVA" icon="fa-java" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="SPRING BOOT" icon="fa-power-off" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="LARAVEL" icon="fa-laravel" onClick={handleButtonClick} />
                     </ul>
-                </div>*/}
+                </div>
             </span>
             {selectedLanguage && (
                 <div className="language-card">
