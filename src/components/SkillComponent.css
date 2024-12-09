@@ -37,6 +37,7 @@
 
 .pf-skill-list li {
     list-style: none;
+    width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,9 +45,8 @@
     border: 1px solid #b23bbd;
     border-radius: 8px;
     color: #623bbd;
-    margin: 0.5em 0;
     font-weight: bold;
-    flex:1;
+    
 }
 
 .pf-skill-list span {

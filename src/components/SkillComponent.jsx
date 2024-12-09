@@ -29,10 +29,6 @@ export function SkillComponent() {
                         <ButtonComponent lenguaje="CSS" icon="fa-css3-alt" onClick={handleButtonClick} />
                         <ButtonComponent lenguaje="JavaScript" icon="fa-js" onClick={handleButtonClick} />
                         <ButtonComponent lenguaje="React" icon="fa-js" onClick={handleButtonClick} />
-                    </ul>
-                </div>
-                <div className="pf-skill-content-contain">
-                    <ul className="pf-skill-list">
                         <ButtonComponent lenguaje="PHP" icon="fa-php" onClick={handleButtonClick} />
                         <ButtonComponent lenguaje="JAVA" icon="fa-java" onClick={handleButtonClick} />
                         <ButtonComponent lenguaje="SPRING BOOT" icon="fa-power-off" onClick={handleButtonClick} />
@@ -40,6 +36,7 @@ export function SkillComponent() {
                     </ul>
                 </div>
             </span>
+            {/* ESTO HAY QEU SACARLO DE AQUÏ HACIA EL MAIN*/}
             {selectedLanguage && (
                 <div className="language-card">
                     <h3>{selectedLanguage}</h3>
