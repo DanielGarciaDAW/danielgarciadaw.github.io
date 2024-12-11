@@ -1,4 +1,3 @@
-
 import "./HeaderComponent.css";
 import { ContactLink } from "./ContactLink";
 import { LogoComponent } from './LogoComponent';

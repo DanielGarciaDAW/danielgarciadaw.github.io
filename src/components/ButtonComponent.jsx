@@ -17,7 +17,7 @@ export function ButtonComponent({lenguaje, icon, onClick}) {
 
     return (
         <li className={buttonFx} onClick={handleClick}>
-            <span className={`fa-brands ${icon}`}/> {lenguaje}
+            <span className={` ${icon}`}/> {lenguaje}
         </li>
     );
 }

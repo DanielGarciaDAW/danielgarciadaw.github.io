@@ -1,6 +1,8 @@
 /* block-Content */
 .pf-presentation-content {
     /*height: 50vh;*/
+    overflow: hidden;
+    
 }
 
 .pf-presentation {
@@ -22,6 +24,7 @@
 
 /* block-reveal */
 .block-reveal {
+    will-change: width, color;
     --t: calc(var(--td) + var(--d));
 
     color: transparent;

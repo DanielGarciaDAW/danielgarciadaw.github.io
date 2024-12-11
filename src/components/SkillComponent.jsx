@@ -14,14 +14,16 @@ export function SkillComponent({ onLanguageSelect }) {
             <span className="pf-skill-content">
                 <div className="pf-skill-content-contain">
                     <ul className="pf-skill-list">
-                        <ButtonComponent lenguaje="HTML" icon="fa-html5" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="CSS" icon="fa-css3-alt" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="JavaScript" icon="fa-js" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="React" icon="fa-js" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="PHP" icon="fa-php" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="JAVA" icon="fa-java" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="SPRING BOOT" icon="fa-power-off" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="LARAVEL" icon="fa-laravel" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="HTML" icon="fa-brands fa-html5" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="CSS" icon="fa-brands fa-css3-alt" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="JavaScript" icon="fa-brands fa-js" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="React" icon="fa-brands fa-react" onClick={handleButtonClick} />
+                    </ul>
+                    <ul className="pf-skill-list">
+                        <ButtonComponent lenguaje="PHP" icon="fa-brands fa-php" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="JAVA" icon="fa-brands fa-java" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="SPRING BOOT" icon="fa fa-power-off" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="LARAVEL" icon="fa-brands fa-laravel" onClick={handleButtonClick} />
                     </ul>
                 </div>
             </span>

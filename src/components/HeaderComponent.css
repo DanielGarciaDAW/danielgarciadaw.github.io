@@ -1,6 +1,7 @@
 .pf-header {
-    margin: 0 auto;
-    width: 90%;
+    margin: 0 0 2rem 0;
+    margin-left: 2rem;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -21,17 +22,24 @@
 
 .pf-header-nav-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     list-style: none;
     align-items: center;
     flex-wrap: wrap;
     width: 60%;
+    margin-right: 2rem;
 }
 
 .pf-header-icon {
     font-size: 2em;
     margin: 0.8em;
     color: #f9ebc4;
+    display: inline-block;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.pf-header-icon:hover {
+    transform: scale(1.4);
 }
 
 /*<----Link email ---->*/
