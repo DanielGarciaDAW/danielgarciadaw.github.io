@@ -2,12 +2,14 @@
 .pf-presentation-content {
     /*height: 50vh;*/
     overflow: hidden;
-    
+    display:flex;
+    justify-content: space-between;
 }
 
 .pf-presentation {
     text-align: left;
-    width: 60%;
+    width: 40%;
+    
 }
 
 .pf-presentation-title {
@@ -16,15 +18,20 @@
     font-weight: bold;
 }
 
-.pf-presentation-description {
+.pf-presentation-dev {
     font-size: 1.5em;
     margin: 0 0 0 2rem;
     font-weight: bold;
 }
+.pf-presentation-description {
+    margin-right: 2rem;
+    width: 40%;
+    text-align: center;
+    
+}
 
 /* block-reveal */
 .block-reveal {
-    will-change: width, color;
     --t: calc(var(--td) + var(--d));
 
     color: transparent;
@@ -38,7 +45,7 @@
     animation: revealBlock 0s var(--t) forwards;
 }
 
-.pf-presentation-description {
+.pf-presentation-dev {
     animation: revealBlock2 0s var(--t) forwards;
 }
 
