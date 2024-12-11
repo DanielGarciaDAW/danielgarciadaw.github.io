@@ -1,5 +1,9 @@
-import { IconComponent } from './IconComponent';
+
+import "./HeaderComponent.css";
+import { ContactLink } from "./ContactLink";
 import { LogoComponent } from './LogoComponent';
+import { IconComponent } from './IconComponent';
+
 
 export function HeaderComponent() {
     return (
@@ -8,6 +12,9 @@ export function HeaderComponent() {
                 <LogoComponent />
             </div>
             <ul className="pf-header-nav-bar">
+                <li>
+                    <span className="pf-header-email pf-header-button slide_right"><ContactLink/></span>
+                </li>
                 <li>
                     <IconComponent
                         icono="fa-solid fa-file-pdf"
