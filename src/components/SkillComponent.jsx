@@ -3,6 +3,7 @@ import { ButtonComponent } from './ButtonComponent';
 
 export function SkillComponent({ onLanguageSelect }) {
 
+
     const handleButtonClick = (language) => {
         onLanguageSelect(language); // Llama a la función pasada desde App
     };

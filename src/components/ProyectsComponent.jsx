@@ -2,27 +2,50 @@ import React, { useState } from 'react';
 import './ProyectsComponent.css';
 
 export function ProyectsComponent({ selectedLanguage }) {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalImage, setModalImage] = useState('');
 
-    // Información de cada lenguaje
-    const languageInfo = {
-        HTML: (
-            <div className="pf-projects-content-contain">
-                <p><strong>HTML</strong> es el lenguaje estándar para la creación de páginas web.</p>
-                <figcaption>
-                    <img
-                        src="../assets/comprimidas/HTML.png"
-                        alt="Imagen de html"
-                        onClick={() => handleImageClick('../assets/comprimidas/HTML.png')}
-                        className="clickable-image"
-                    />
-                </figcaption>
-            </div>
-        ),
-        CSS: "CSS se utiliza para describir la presentación de un documento escrito en HTML.",
-        JavaScript: "JavaScript es un lenguaje de programación que permite crear contenido interactivo.",
-        React: "React es una biblioteca de JavaScript para construir interfaces de usuario."
+    const images = {
+        HTML: [
+            "../assets/comprimidas/HTML.png",
+        ],
+        CSS: [
+            "../assets/comprimidas/CSS.png",
+        ],
+        JavaScript: [
+            "../assets/comprimidas/JAVASCRIPT.png",
+            "../assets/comprimidas/JAVASCRIPT1.png",
+            "../assets/comprimidas/JAVASCRIPT2.png",
+            "../assets/comprimidas/JAVASCRIPT3.png",
+        ],
+        React: [
+            "../assets/comprimidas/REACT.png",
+            "../assets/comprimidas/REACT1.png",
+            "../assets/comprimidas/REACT2.png",
+            "../assets/comprimidas/REACT3.png",
+        ],
+        PHP: [
+            "../assets/comprimidas/PHP.png",
+            "../assets/comprimidas/PHP1.png",
+            "../assets/comprimidas/PHP2.png",
+            "../assets/comprimidas/PHP3.png",
+        ],
+        JAVA: [
+            "../assets/comprimidas/JAVA.png",
+            "../assets/comprimidas/JAVA1.png",
+            "../assets/comprimidas/JAVA2.png",
+        ]
+    };
+
+    const currentImages = images[selectedLanguage] || [];
+
+    const handlePrevious = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? currentImages.length - 1 : prevIndex - 1));
+    };
+
+    const handleNext = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex === currentImages.length - 1 ? 0 : prevIndex + 1));
     };
 
     const handleImageClick = (imageSrc) => {
@@ -35,6 +58,8 @@ export function ProyectsComponent({ selectedLanguage }) {
         setModalImage('');
     };
 
+    const showNavigation = currentImages.length > 1;
+
     return (
         <>
             <section className="pf-projects">
@@ -42,11 +67,31 @@ export function ProyectsComponent({ selectedLanguage }) {
                 {selectedLanguage ? (
                     <div className="pf-projects-content">
                         <h3>Proyectos relacionados con {selectedLanguage}</h3>
-                        {selectedLanguage in languageInfo ? (
-                            <>{languageInfo[selectedLanguage]}</>
-                        ) : (
-                            <p>No hay información disponible para {selectedLanguage}.</p>
-                        )}
+                        <div className="pf-projects-content-contain">
+                            <p>Descripción del proyecto relacionado con {selectedLanguage}</p>
+                            
+                            {/* Imagen que cambia */}
+                            <div className="image-container">
+                                <img
+                                    src={currentImages[currentImageIndex]}
+                                    alt={`Imagen de ${selectedLanguage}`}
+                                    className="clickable-image"
+                                    onClick={() => handleImageClick(currentImages[currentImageIndex])}
+                                />
+                            </div>
+
+                            {/* Botones de desplazamiento */}
+                            {showNavigation && (
+                                <div className="image-navigation">
+                                    <button className="nav-button" onClick={handlePrevious}>
+                                        <i className="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button className="nav-button" onClick={handleNext}>
+                                        <i className="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 ) : (
                     <div className="pf-projects-content">

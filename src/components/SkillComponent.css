@@ -14,9 +14,8 @@
 .pf-skill-content {
     display: flex;
     flex-direction: column;
-    width: 94%;
+    width: 100%;
     margin: 0 0 0 2rem;
-    margin-right: 2rem;
 }
 
 .pf-skill-content-contain {
@@ -51,4 +50,17 @@
 .pf-skill-list span {
     font-size: 2em;
     margin-right: 1rem;
+}
+
+/* Media Query para móviles */
+@media (max-width: 768px) {
+    .pf-skill-list li {
+        width: 150px; /* Ajuste del tamaño de los botones en móvil */
+    }
+}
+
+@media (max-width: 480px) {
+    .pf-skill-list li {
+        width: 120px; /* Ajuste aún más pequeño para pantallas muy pequeñas */
+    }
 }
