@@ -5,18 +5,17 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .pf-header-logo span:first-child {
     font-size: 2em;
-    color: #b23bbd;
+    color: #f9ebc4;
     font-weight: bold;
 }
 
 .pf-header-logo span:last-child {
     font-size: 2em;
-    color: #623bbd;
+    color: #fc2f68;
     font-weight: bold;
 }
 
@@ -32,29 +31,32 @@
 .pf-header-icon {
     font-size: 2em;
     margin: 0.8em;
+    color: #f9ebc4;
 }
 
 /*<----Link email ---->*/
 .pf-header-button {
-    color: #FFF;
     padding: .6em .8em;
-    border: 2px solid #b23bbd;
+    border: 2px solid #fc2f68;
     display: inline-block;
     cursor: pointer;
-    box-shadow: inset 0 0 0 0 #b23bbd;
+    box-shadow: inset 0 0 0 0 #fc2f68;
     -webkit-transition: ease-out 0.3s;
     -moz-transition: ease-out 0.3s;
     transition: ease-out 0.3s;
 }
 
 .slide_right:hover {
-    box-shadow: inset 400px 0 0 0 #b23bbd;
+    color: #f9ebc4;
+    box-shadow: inset 400px 0 0 0 #fc2f68;
 }
 .pf-header-email {
     border-radius: 8px !important;
-    color: #623bbd;
-    font-weight: bold;
 }
+
 .pf-contact-link {
     text-decoration: none;
+    border-radius: 8px !important;
+    color: #f9ebc4 !important;
+    font-weight: bold;
 }

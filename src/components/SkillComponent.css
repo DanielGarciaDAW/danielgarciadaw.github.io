@@ -6,7 +6,7 @@
 
 .pf-skill-title {
     font-size: 2em;
-    color: #b23bbd;
+    color: #fc2f68;
     font-weight: bold;
     margin: 0 0 2rem 2rem;
 }
@@ -41,9 +41,8 @@
     align-items: center;
     justify-content: center;
     padding: .4em .8em;
-    border: 1px solid #b23bbd;
-    border-radius: 8px;
-    color: #623bbd;
+    border: 1px solid #fc2f68;
+    border-radius: 8px;  
     font-weight: bold; 
 }
 

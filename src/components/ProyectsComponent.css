@@ -6,7 +6,7 @@
 
 .pf-projects-title {
     font-size: 2em;
-    color: #b23bbd;
+    color: #fc2f68;
     font-weight: bold;
     margin-bottom: 1rem;
 }
@@ -22,8 +22,8 @@
     flex-direction: column;
     justify-content: flex-start; /* Asegura que el contenido se alinee al principio */
     align-items: center;
-    border: 2px solid #b23bbd;
-    border-radius: 10px;
+    border: 2px solid #fc2f68;
+    border-radius: 24px;
     padding-bottom: 12rem;
     box-sizing: border-box;
     width: 400px; /* Establecido a 400px de ancho */
@@ -33,11 +33,10 @@
 }
 
 p:first-child {
-    color: blueviolet;
+    color: f9ebc4;
     font-size: 1.2em;
     margin-top: 0;
-    background-color: #b23bbd;
-    border-radius: 8px 8px 0 0;
+    background-color: #fc2f68;
     padding: 1rem;
     width: 100%;
     text-align: center;
@@ -72,14 +71,14 @@ img {
     background-color: transparent;
     border: none;
     font-size: 2em;
-    color: #b23bbd;
+    color: #fc2f68;
     cursor: pointer;
     padding: 0.5rem;
     transition: color 0.2s;
 }
 
 .nav-button:hover {
-    color: #b23bbd;
+    color: #fc2f68;
 }
 
 .modal-overlay {
@@ -112,13 +111,13 @@ img {
 
 .close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 12px;
     background: transparent;
     border: none;
-    font-size: 1.5rem;
+    font-size: 2.5em;
     cursor: pointer;
-    color: #333;
+    color: #fc2f68;
 }
 /* Hacer que la imagen se enfoque al hacer clic */
 .image-container {

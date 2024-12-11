@@ -4,7 +4,8 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Lucida Console", Monaco, monospace;
+  color:#f9ebc4;
 }
 .demomento{
   margin: 2em;

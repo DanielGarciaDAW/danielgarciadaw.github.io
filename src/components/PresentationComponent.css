@@ -11,14 +11,12 @@
 .pf-presentation-title {
     font-size: 2em;
     margin: 0 0 0 2rem;
-    color: #b23bbd;
     font-weight: bold;
 }
 
 .pf-presentation-description {
     font-size: 1.5em;
     margin: 0 0 0 2rem;
-    color: #623bbd;
     font-weight: bold;
 }
 
@@ -59,11 +57,11 @@
 
 /* animations */
 @keyframes revealBlock {
-    100% { color: #b23bbd; }
+    100% { color: #f9ebc4; }
 }
 
 @keyframes revealBlock2 {
-    100% { color: #623bbd; }
+    100% { color: #fc2f68; }
 }
 
 @keyframes revealingIn {
