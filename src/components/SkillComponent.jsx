@@ -11,8 +11,7 @@ export function SkillComponent({ onLanguageSelect }) {
     return (
         <section className="pf-skill">
             <h2 className="pf-skill-title">Skill</h2>
-            <span className="pf-skill-content">
-                <div className="pf-skill-content-contain">
+            <div className="pf-skill-content">               
                     <ul className="pf-skill-list">
                         <ButtonComponent lenguaje="HTML" icon="fa-brands fa-html5" onClick={handleButtonClick} />
                         <ButtonComponent lenguaje="CSS" icon="fa-brands fa-css3-alt" onClick={handleButtonClick} />
@@ -25,8 +24,7 @@ export function SkillComponent({ onLanguageSelect }) {
                         <ButtonComponent lenguaje="SPRING BOOT" icon="fa fa-power-off" onClick={handleButtonClick} />
                         <ButtonComponent lenguaje="LARAVEL" icon="fa-brands fa-laravel" onClick={handleButtonClick} />
                     </ul>
-                </div>
-            </span>
+            </div>
         </section>
     );
 }

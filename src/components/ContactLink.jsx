@@ -6,8 +6,7 @@ export function ContactLink() {
     return (
         <a
             href={`mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}
-            className="pf-contact-link button-slide slide_right"
-        >
+            className="pf-contact-link button-slide slide_right">
             Garcisdaniel@gmail.com
         </a>
     );
