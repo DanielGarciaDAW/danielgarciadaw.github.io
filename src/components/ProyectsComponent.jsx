@@ -6,6 +6,26 @@ export function ProyectsComponent({ selectedLanguage }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalImage, setModalImage] = useState('');
 
+    const descriptions = {
+        HTML: ["Practica presentada para el proyecto final de la asignatura Diseño de Interfaces Web."],
+        CSS: ["Pagina de CSS usada para el proyecto de HTML."],
+        JavaScript: [
+            "Proyecto de Almacenamiento de datos de entrenamientos con JavaScript.", 
+        ],
+        React: [
+            "Código de este portafolio.",
+            
+        ],
+        PHP: [
+            "Proyecto de videoclub, almacenamiento de datos con PHP.",
+            
+        ],
+        JAVA: [
+            "Proyecto de estadistica de infecciones por COVID-19 en Java (Simulacro).",
+        
+        ]
+    };
+
     const images = {
         HTML: [
             "../assets/comprimidas/HTML.png",
@@ -39,6 +59,7 @@ export function ProyectsComponent({ selectedLanguage }) {
     };
 
     const currentImages = images[selectedLanguage] || [];
+    const currentDescriptions = descriptions[selectedLanguage] || [];
 
     const handlePrevious = () => {
         setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? currentImages.length - 1 : prevIndex - 1));
@@ -68,8 +89,9 @@ export function ProyectsComponent({ selectedLanguage }) {
                     <div className="pf-projects-content">
                         <h3>Proyectos relacionados con {selectedLanguage}</h3>
                         <div className="pf-projects-content-contain">
+                            <p>{currentDescriptions[currentImageIndex] || "Descripción no disponible."}</p>
                             <p>Descripción del proyecto relacionado con {selectedLanguage}</p>
-                            
+
                             {/* Imagen que cambia */}
                             <div className="image-container">
                                 <img
