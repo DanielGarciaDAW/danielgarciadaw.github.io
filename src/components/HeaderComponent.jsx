@@ -6,28 +6,29 @@ import { IconComponent } from './IconComponent';
 
 export function HeaderComponent() {
     return (
-        <header className="pf-header">
-            <div className="pf-header-logo">
+        <header className="pf-header" aria-label="Cabecera principal del portafolio">
+            <div className="pf-header-brand">
                 <LogoComponent />
+                <p className="pf-header-tagline">Portfolio profesional</p>
             </div>
 
             <div className="pf-header-nav">
-                <span className="pf-header-email pf-header-button slide_right"><ContactLink /></span>
+                <ContactLink />
 
                 <ul className="pf-header-nav-bar">
                     <li>
                         <IconComponent
-                            icono="fa-solid fa-file-pdf"
-                            link="assets/DanielGarcia.pdf" />
+                            label="CV"
+                            link={`${import.meta.env.BASE_URL}assets/DanielGarcia.pdf`} />
                     </li>
                     <li>
                         <IconComponent
-                            icono="fa-brands fa-linkedin"
+                            label="in"
                             link="https://lnkd.in/dAxxxUyS" />
                     </li>
                     <li>
                         <IconComponent
-                            icono="fa-brands fa-github"
+                            label="GH"
                             link="https://github.com/DanielGarciaDaw" />
                     </li>
                 </ul>

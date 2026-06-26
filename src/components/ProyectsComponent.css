@@ -1,84 +1,149 @@
 .pf-projects {
     display: flex;
     flex-direction: column;
-    margin: 2rem;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .pf-projects-title {
-    font-size: 2em;
-    color: #fc2f68;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: #f8f5ea;
+    font-weight: 700;
 }
 
 .pf-projects-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
 }
 
 .pf-projects-content-contain {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Asegura que el contenido se alinee al principio */
-    align-items: center;
-    border: 2px solid #fc2f68;
-    border-radius: 24px;
-    padding-bottom: 12rem;
-    box-sizing: border-box;
-    width: 400px; /* Establecido a 400px de ancho */
-    height: 800px; /* Establecido a 800px de alto */
-    overflow: hidden; /* Recorta la imagen si excede el contenedor */
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.75rem;
+    background: rgba(8, 17, 31, 0.72);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
     position: relative;
+    overflow: hidden;
 }
 
-p:first-child {
-    color: f9ebc4;
-    font-size: 1.2em;
-    margin-top: 0;
-    background-color: #fc2f68;
-    padding: 1rem;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box; /* Asegura que el padding se incluya dentro del tamaño total */
+.pf-projects-heading {
+    margin-bottom: 0.25rem;
 }
 
-/* Estilo de la imagen recortada y ajustada */
+.pf-projects-subtitle {
+    margin: 0;
+    color: rgba(229, 237, 247, 0.72);
+}
+
+.pf-projects-card {
+    display: grid;
+    gap: 1rem;
+}
+
+.pf-projects-card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.pf-projects-card__header h3,
+.pf-projects-empty h3 {
+    margin: 0;
+    color: #f8f5ea;
+    font-size: 1.25rem;
+}
+
+.pf-projects-card__eyebrow {
+    margin: 0;
+    color: #fc2f68;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.pf-projects-copy {
+    display: grid;
+    gap: 0.6rem;
+}
+
+.pf-projects-copy p {
+    margin: 0;
+    color: rgba(229, 237, 247, 0.86);
+    line-height: 1.7;
+}
+
+.pf-projects-copy p:first-child {
+    color: #f9ebc4;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.pf-projects-empty {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(229, 237, 247, 0.82);
+}
+
+.pf-projects-empty p {
+    margin: 0.5rem 0 0;
+}
+
 .image-container {
-    margin-top: 1rem;
     position: relative;
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 10;
+    padding: 0;
+    border: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
 }
 
-img {
+.clickable-image {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
     object-position: top left; /* Muestra la parte superior izquierda de la imagen */
     border-radius: 8px;
     cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .image-navigation {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
-    margin-top: 1rem;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
 }
 
 .nav-button {
     background-color: transparent;
-    border: none;
-    font-size: 2em;
-    color: #fc2f68;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: #e5edf7;
     cursor: pointer;
-    padding: 0.5rem;
-    transition: color 0.2s;
+    padding: 0.7rem 1rem;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.nav-button:hover {
-    color: #fc2f68;
+.nav-button:hover,
+.nav-button:focus-visible {
+    transform: translateY(-1px);
+    border-color: rgba(252, 47, 104, 0.5);
+    background: rgba(252, 47, 104, 0.08);
+    outline: none;
 }
 
 .modal-overlay {
@@ -87,105 +152,59 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.76);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    padding: 1rem;
 }
 
 .modal-content {
-    border-radius: 8px;
+    border-radius: 1rem;
     max-width: 90%;
     max-height: 90%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
     text-align: center;
     position: relative;
-    overflow: auto;
+    overflow: hidden;
     height: auto;
+    background: #08111f;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .modal-content img {
     max-width: 100%;
-    max-height: none;
-    border-radius: 8px;
+    max-height: 80vh;
+    border-radius: 0;
 }
 
 .close-button {
     position: absolute;
     top: 12px;
     right: 12px;
-    background: transparent;
-    border: none;
-    font-size: 2.5em;
+    background: rgba(8, 17, 31, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    font-size: 0.85rem;
     cursor: pointer;
-    color: #fc2f68;
-    animation: scaleAnimation 1s infinite;
-}
-@keyframes scaleAnimation {
-
-    0% { transform: scale(1.2); }
-
-    50% { transform: scale(1); }
-
-    100% { transform: scale(1.2); }
-
-}
-/* Hacer que la imagen se enfoque al hacer clic */
-.image-container {
-    margin-top: 1rem;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Añadido para el enfoque suave */
+    color: #f9ebc4;
+    padding: 0.6rem 0.9rem;
+    z-index: 1;
 }
 
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top left;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Efecto suave de transformación */
+.close-button:hover,
+.close-button:focus-visible {
+    border-color: rgba(252, 47, 104, 0.65);
+    outline: none;
 }
 
-img.focused {
-    transform: scale(1.1); /* Aumenta el tamaño de la imagen */
-    filter: brightness(1.2); /* Añadir brillo para hacerla más visible */
-    z-index: 1; /* Asegura que la imagen destacada esté al frente */
-}
+@media (max-width: 720px) {
+    .image-navigation {
+        justify-content: stretch;
+    }
 
-/* Agregar una sombra a la imagen para que se destaque más */
-.image-container.focused img {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-}
-
-/* Modal */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    border-radius: 8px;
-    max-width: 90%;
-    max-height: 90%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    position: relative;
-}
-
-.modal-content img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 8px;
+    .nav-button {
+        flex: 1;
+    }
 }

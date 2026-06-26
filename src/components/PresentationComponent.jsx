@@ -2,14 +2,13 @@ import './PresentationComponent.css'
 
 export function PresentationComponent() {
     return (
-        <section className="pf-presentation-content" style={{ '--td': '1.2s' }}>
+        <section className="pf-presentation-content">
             <div className="pf-presentation">
-                <h1 className="pf-presentation-title block-reveal"
-                    style={{ '--bc': '#fc2f68', '--d': '.1s' }}>
+                <p className="pf-presentation-kicker">Portafolio</p>
+                <h1 className="pf-presentation-title">
                     Daniel García
                 </h1>
-                <p className="pf-presentation-dev block-reveal"
-                    style={{ '--bc': '#f9ebc4', '--d': '.5s' }}>
+                <p className="pf-presentation-dev">
                     Full Stack Developer
                 </p>
             </div>

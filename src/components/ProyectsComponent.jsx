@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './ProyectsComponent.css';
 
 export function ProyectsComponent({ selectedLanguage }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalImage, setModalImage] = useState('');
+
+    const assetBase = `${import.meta.env.BASE_URL}assets/comprimidas/`;
 
     const descriptions = {
         HTML: ["Practica presentada para el proyecto final de la asignatura Diseño de Interfaces Web."],
@@ -28,35 +30,41 @@ export function ProyectsComponent({ selectedLanguage }) {
 
     const images = {
         HTML: [
-            "../assets/comprimidas/HTML.png",
+            `${assetBase}HTML.png`,
         ],
         CSS: [
-            "../assets/comprimidas/CSS.png",
+            `${assetBase}CSS.png`,
         ],
         JavaScript: [
-            "../assets/comprimidas/JAVASCRIPT.png",
-            "../assets/comprimidas/JAVASCRIPT1.png",
-            "../assets/comprimidas/JAVASCRIPT2.png",
-            "../assets/comprimidas/JAVASCRIPT3.png",
+            `${assetBase}JAVASCRIPT.png`,
+            `${assetBase}JAVASCRIPT1.png`,
+            `${assetBase}JAVASCRIPT2.png`,
+            `${assetBase}JAVASCRIPT3.png`,
         ],
         React: [
-            "../assets/comprimidas/REACT.png",
-            "../assets/comprimidas/REACT1.png",
-            "../assets/comprimidas/REACT2.png",
-            "../assets/comprimidas/REACT3.png",
+            `${assetBase}REACT.png`,
+            `${assetBase}REACT1.png`,
+            `${assetBase}REACT2.png`,
+            `${assetBase}REACT3.png`,
         ],
         PHP: [
-            "../assets/comprimidas/PHP.png",
-            "../assets/comprimidas/PHP1.png",
-            "../assets/comprimidas/PHP2.png",
-            "../assets/comprimidas/PHP3.png",
+            `${assetBase}PHP.png`,
+            `${assetBase}PHP1.png`,
+            `${assetBase}PHP2.png`,
+            `${assetBase}PHP3.png`,
         ],
         JAVA: [
-            "../assets/comprimidas/JAVA.png",
-            "../assets/comprimidas/JAVA1.png",
-            "../assets/comprimidas/JAVA2.png",
+            `${assetBase}JAVA.png`,
+            `${assetBase}JAVA1.png`,
+            `${assetBase}JAVA2.png`,
         ]
     };
+
+    useEffect(() => {
+        setCurrentImageIndex(0);
+        setIsModalOpen(false);
+        setModalImage('');
+    }, [selectedLanguage]);
 
     const currentImages = images[selectedLanguage] || [];
     const currentDescriptions = descriptions[selectedLanguage] || [];
@@ -84,40 +92,54 @@ export function ProyectsComponent({ selectedLanguage }) {
     return (
         <>
             <section className="pf-projects">
-                <h2 className="pf-projects-title">Projects</h2>
+                <div className="pf-section-heading pf-projects-heading">
+                    <h2 className="pf-projects-title">Projects</h2>
+                    <p className="pf-projects-subtitle">Vista previa del trabajo por tecnología.</p>
+                </div>
                 {selectedLanguage ? (
                     <div className="pf-projects-content">
-                        <h3>Proyectos relacionados con {selectedLanguage}</h3>
-                        <div className="pf-projects-content-contain">
-                            <p>{currentDescriptions[currentImageIndex] || "Descripción no disponible."}</p>
-                            <p>Descripción del proyecto relacionado con {selectedLanguage}</p>
-
-                            {/* Imagen que cambia */}
-                            <div className="image-container">
-                                <img
-                                    src={currentImages[currentImageIndex]}
-                                    alt={`Imagen de ${selectedLanguage}`}
-                                    className="clickable-image"
-                                    onClick={() => handleImageClick(currentImages[currentImageIndex])}
-                                />
+                        <div className="pf-projects-card">
+                            <div className="pf-projects-card__header">
+                                <p className="pf-projects-card__eyebrow">{selectedLanguage}</p>
+                                <h3>Proyectos relacionados con {selectedLanguage}</h3>
                             </div>
 
-                            {/* Botones de desplazamiento */}
-                            {showNavigation && (
-                                <div className="image-navigation">
-                                    <button className="nav-button" onClick={handlePrevious}>
-                                        <i className="fas fa-chevron-left"></i>
-                                    </button>
-                                    <button className="nav-button" onClick={handleNext}>
-                                        <i className="fas fa-chevron-right"></i>
-                                    </button>
+                            <div className="pf-projects-content-contain">
+                                <div className="pf-projects-copy">
+                                    <p>{currentDescriptions[currentImageIndex] || "Descripción no disponible."}</p>
+                                    <p>Descripción del proyecto relacionado con {selectedLanguage}</p>
                                 </div>
-                            )}
+
+                                <button
+                                    type="button"
+                                    className="image-container"
+                                    onClick={() => handleImageClick(currentImages[currentImageIndex])}
+                                >
+                                    <img
+                                        src={currentImages[currentImageIndex]}
+                                        alt={`Imagen de ${selectedLanguage}`}
+                                        className="clickable-image"
+                                        loading="lazy"
+                                    />
+                                </button>
+
+                                {showNavigation && (
+                                    <div className="image-navigation">
+                                        <button className="nav-button" onClick={handlePrevious} type="button">
+                                            Anterior
+                                        </button>
+                                        <button className="nav-button" onClick={handleNext} type="button">
+                                            Siguiente
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                 ) : (
-                    <div className="pf-projects-content">
+                    <div className="pf-projects-empty">
                         <h3>Selecciona una skill</h3>
+                        <p>Los proyectos y capturas aparecerán aquí para la tecnología que elijas.</p>
                     </div>
                 )}
             </section>
@@ -126,7 +148,7 @@ export function ProyectsComponent({ selectedLanguage }) {
             {isModalOpen && (
                 <div className="modal-overlay" onClick={closeModal}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <button className="close-button" onClick={closeModal}>×</button>
+                        <button className="close-button" onClick={closeModal} type="button">Cerrar</button>
                         <img src={modalImage} alt="Imagen ampliada" />
                     </div>
                 </div>

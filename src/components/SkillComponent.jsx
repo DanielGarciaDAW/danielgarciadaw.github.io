@@ -10,19 +10,22 @@ export function SkillComponent({ onLanguageSelect }) {
 
     return (
         <section className="pf-skill">
-            <h2 className="pf-skill-title">Skill</h2>
+            <div className="pf-section-heading">
+                <h2 className="pf-skill-title">Skill</h2>
+                <p className="pf-skill-subtitle">Selecciona una tecnología para ver proyectos relacionados.</p>
+            </div>
             <div className="pf-skill-content">               
                     <ul className="pf-skill-list">
-                        <ButtonComponent lenguaje="HTML" icon="fa-brands fa-html5" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="CSS" icon="fa-brands fa-css3-alt" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="JavaScript" icon="fa-brands fa-js" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="React" icon="fa-brands fa-react" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="HTML" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="CSS" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="JavaScript" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="React" onClick={handleButtonClick} />
                     </ul>
                     <ul className="pf-skill-list">
-                        <ButtonComponent lenguaje="PHP" icon="fa-brands fa-php" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="JAVA" icon="fa-brands fa-java" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="SPRING BOOT" icon="fa fa-power-off" onClick={handleButtonClick} />
-                        <ButtonComponent lenguaje="LARAVEL" icon="fa-brands fa-laravel" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="PHP" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="JAVA" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="SPRING BOOT" onClick={handleButtonClick} />
+                        <ButtonComponent lenguaje="LARAVEL" onClick={handleButtonClick} />
                     </ul>
             </div>
         </section>

@@ -1,25 +1,26 @@
 import './App.css'
+import { useState } from 'react'
 import { HeaderComponent } from './components/HeaderComponent'
 import { PresentationComponent } from './components/PresentationComponent'
 import { ProyectsComponent } from './components/ProyectsComponent'
 import { SkillComponent } from './components/SkillComponent'
-import React, { useState } from 'react';
 
 function App() {
-  const [selectedLanguage, setSelectedLanguage] = useState(null); // Estado compartido
+  const [selectedLanguage, setSelectedLanguage] = useState(null)
 
   return (
-    <>
-      <main className="main-content">
+    <main className="app-shell">
+      <div className="app-shell__accent app-shell__accent--one" aria-hidden="true" />
+      <div className="app-shell__accent app-shell__accent--two" aria-hidden="true" />
+
+      <div className="app-shell__content">
         <HeaderComponent />
-        <hr className="demomento"/>
         <PresentationComponent />
-        <hr className="demomento"/>
+        <div className="app-section-divider" aria-hidden="true" />
         <SkillComponent onLanguageSelect={setSelectedLanguage} />
-        <hr className="demomento"/>
         <ProyectsComponent selectedLanguage={selectedLanguage} />
-      </main>
-    </>
+      </div>
+    </main>
   )
 }
 
