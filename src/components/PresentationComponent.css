@@ -1,6 +1,6 @@
 .pf-presentation-content {
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 1.5rem;
     align-items: stretch;
     margin-top: 1.5rem;
@@ -12,6 +12,9 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: linear-gradient(160deg, rgba(12, 22, 41, 0.92), rgba(8, 16, 28, 0.78));
     box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 720ms ease-out, transform 720ms ease-out;
 }
 
 .pf-presentation-kicker {
@@ -29,6 +32,10 @@
     line-height: 0.95;
     letter-spacing: -0.04em;
     color: #f8f5ea;
+    text-wrap: balance;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 720ms ease-out 80ms, transform 720ms ease-out 80ms;
 }
 
 .pf-presentation-dev {
@@ -38,25 +45,171 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 720ms ease-out 150ms, transform 720ms ease-out 150ms;
+}
+
+.pf-presentation-pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.1rem;
+}
+
+.pf-presentation-pill {
+    display: inline-flex;
+    --grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 0.42rem;
+    padding: 0.55rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: #f9ebc4;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 780ms ease-out,
+        transform 780ms ease-out,
+        border-color 180ms ease,
+        background 180ms ease,
+        color 180ms ease;
+}
+
+.pf-presentation-pill__icon {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: rgba(229, 237, 247, 0.7);
+    box-shadow: 0 0 0 0 rgba(252, 47, 104, 0.0);
+    transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    flex: 0 0 auto;
+}
+
+.pf-presentation-pill__label,
+.pf-presentation-pill__hover-label {
+    display: inline-block;
+    transition: opacity 320ms ease, transform 320ms ease;
+}
+
+.pf-presentation-pill__hover-label {
+    grid-column: 2;
+    grid-row: 1;
+    opacity: 0;
+    transform: translateY(4px);
+    color: #fc2f68;
+    white-space: nowrap;
+    pointer-events: none;
+    justify-self: start;
+}
+
+.pf-presentation-pill:hover,
+.pf-presentation-pill:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(252, 47, 104, 0.65);
+    background: rgba(252, 47, 104, 0.08);
+    color: #fc2f68;
+    outline: none;
+}
+
+.pf-presentation-pill:hover .pf-presentation-pill__icon,
+.pf-presentation-pill:focus-visible .pf-presentation-pill__icon {
+    background: #fc2f68;
+    box-shadow: 0 0 0 5px rgba(252, 47, 104, 0.12);
+    transform: scale(1.05);
+}
+
+.pf-presentation-pill:hover .pf-presentation-pill__label,
+.pf-presentation-pill:focus-visible .pf-presentation-pill__label {
+    opacity: 0;
+    transform: translateY(-6px);
+}
+
+.pf-presentation-pill:hover .pf-presentation-pill__hover-label,
+.pf-presentation-pill:focus-visible .pf-presentation-pill__hover-label {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .pf-presentation-description {
-    display: flex;
+    display: grid;
+    gap: 1rem;
     align-items: center;
-    padding: 2rem;
+    justify-items: center;
+    padding: 1rem;
     border-radius: 1.75rem;
     border: 1px solid rgba(252, 47, 104, 0.18);
     background: linear-gradient(180deg, rgba(252, 47, 104, 0.12), rgba(252, 47, 104, 0.04));
     box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 760ms ease-out 120ms, transform 760ms ease-out 120ms;
 }
 
-.pf-presentation-description h4 {
+.pf-presentation-copy {
     margin: 0;
     color: rgba(229, 237, 247, 0.9);
     font-size: 1.05rem;
     line-height: 1.75;
     font-weight: 500;
     text-wrap: balance;
+}
+
+.pf-presentation-photo {
+    width: min(220px, 100%);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.pf-presentation-bottom {
+    margin: 0;
+    padding: 1.05rem 1.2rem;
+    border-radius: 1.2rem;
+    border: 1px solid rgba(252, 47, 104, 0.18);
+    background: linear-gradient(135deg, rgba(252, 47, 104, 0.08), rgba(255, 255, 255, 0.035));
+    color: rgba(229, 237, 247, 0.9);
+    line-height: 1.75;
+    grid-column: 1 / -1;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 760ms ease-out 180ms, transform 760ms ease-out 180ms;
+}
+
+.pf-presentation--visible,
+.pf-presentation--visible .pf-presentation-title,
+.pf-presentation--visible .pf-presentation-dev,
+.pf-presentation--visible .pf-presentation-pill,
+.pf-presentation-description--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pf-presentation--visible .pf-presentation-pill:nth-child(1) { transition-delay: 180ms; }
+.pf-presentation--visible .pf-presentation-pill:nth-child(2) { transition-delay: 240ms; }
+.pf-presentation--visible .pf-presentation-pill:nth-child(3) { transition-delay: 300ms; }
+.pf-presentation--visible .pf-presentation-pill:nth-child(4) { transition-delay: 360ms; }
+
+.pf-presentation--visible .pf-presentation-title {
+    transition-delay: 80ms;
+}
+
+.pf-presentation--visible .pf-presentation-dev {
+    transition-delay: 150ms;
+}
+
+.pf-presentation-bottom--visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @media (max-width: 900px) {
@@ -69,5 +222,9 @@
     .pf-presentation,
     .pf-presentation-description {
         padding: 1.4rem;
+    }
+
+    .pf-presentation-dev {
+        letter-spacing: 0.05em;
     }
 }

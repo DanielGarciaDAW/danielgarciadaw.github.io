@@ -1,7 +1,0 @@
-button {
-    font: inherit;
-}
-
-.pf-skill-button--active {
-    transform: translateY(-2px) scale(0.99);
-}

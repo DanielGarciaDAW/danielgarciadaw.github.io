@@ -9,7 +9,7 @@ export function HeaderComponent() {
         <header className="pf-header" aria-label="Cabecera principal del portafolio">
             <div className="pf-header-brand">
                 <LogoComponent />
-                <p className="pf-header-tagline">Portfolio profesional</p>
+                <p className="pf-header-tagline">Desarrollo web y backend</p>
             </div>
 
             <div className="pf-header-nav">
@@ -23,12 +23,12 @@ export function HeaderComponent() {
                     </li>
                     <li>
                         <IconComponent
-                            label="in"
+                            label="LinkedIn"
                             link="https://lnkd.in/dAxxxUyS" />
                     </li>
                     <li>
                         <IconComponent
-                            label="GH"
+                            label="GitHub"
                             link="https://github.com/DanielGarciaDaw" />
                     </li>
                 </ul>

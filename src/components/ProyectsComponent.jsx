@@ -1,158 +1,150 @@
-import { useEffect, useState } from 'react';
 import './ProyectsComponent.css';
+import { FaCss3Alt, FaHtml5, FaJava, FaJs, FaLayerGroup, FaPhp, FaReact } from 'react-icons/fa6'
+import { SiLaravel, SiSpringboot } from 'react-icons/si'
 
-export function ProyectsComponent({ selectedLanguage }) {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [modalImage, setModalImage] = useState('');
+const projects = [
+    {
+        title: 'Analyst Engineer Development',
+        eyebrow: 'OutSystems · DXC Iberia',
+        summary: 'Analyst Engineer Development en el departamento de Legacy.',
+        outcome: `En junio de 2025 terminé mis prácticas tras transformar una aplicación clave de una de las bancas más importantes de España.
+Desde septiembre formo parte del equipo como una pieza de apoyo sólida en un GMS para una de las federaciones deportivas más grandes del mundo.`,
+        glyph: 'outsystems',
+        stack: ['OutSystems'],
+    },
+    {
+        title: 'Portfolio web personal',
+        eyebrow: 'Frontend',
+        summary: 'Diseñado y desarrollado con HTML, CSS, JavaScript y React.',
+        outcome: `Una presentación limpia, rápida y responsive para mostrar mi perfil profesional con una base visual sólida.
+        La refactorización de la web a React me permitió mejorar la estructura y el rendimiento, además de facilitar futuras actualizaciones.`,
+        glyph: 'code',
+        stack: ['HTML', 'CSS', 'JavaScript', 'React'],
+    },
+    {
+        title: 'Proyecto final de grado',
+        eyebrow: 'Full Stack',
+        summary: 'Desarrollo del TFG con PHP y Laravel, calificado con un 10.',
+        outcome: `Apliqué una estructura clara para construir una solución mantenible, funcional y orientada a resolver un caso real.
+        Cree un sistema de gestión de habitaciones para aquellos que buscan una solución práctica y eficiente para organizar y administrar sus espacios de manera efectiva,
+        dando cabida gestión de grandes hoteles, como a pequeñas propiedades.`,
+        glyph: 'stack',
+        stack: ['PHP', 'Laravel'],
+    },
+    {
+        title: 'APIs con Java y Spring Boot',
+        eyebrow: 'Backend',
+        summary: 'Creación de varias APIs para el mismo TFG con Java Spring Boot.',
+        outcome: `Servicios preparados para consumo, con una base técnica robusta para escalar lógica de negocio y datos.
+        Implementé un sistema de autenticación y autorización con JWT, asegurando que solo los usuarios autorizados puedan acceder a los recursos protegidos.
+        Además, integré Swagger para documentar y probar las APIs de manera eficiente, facilitando la colaboración y el mantenimiento del proyecto.`,
+        glyph: 'api',
+        stack: ['Java', 'Spring Boot'],
+    },
+]
 
-    const assetBase = `${import.meta.env.BASE_URL}assets/comprimidas/`;
+function OutSystemsTechIcon(props) {
+    return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+            <path d="M12 4.2c3.6 0 6.5 2.9 6.5 6.5S15.6 17.2 12 17.2 5.5 14.3 5.5 10.7 8.4 4.2 12 4.2Z" fill="none" stroke="currentColor" strokeWidth="1.7" />
+            <path d="M8.8 10.7h6.4M12 7.5v6.4" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+            <circle cx="12" cy="10.7" r="1.3" fill="currentColor" />
+        </svg>
+    )
+}
 
-    const descriptions = {
-        HTML: ["Practica presentada para el proyecto final de la asignatura Diseño de Interfaces Web."],
-        CSS: ["Pagina de CSS usada para el proyecto de HTML."],
-        JavaScript: [
-            "Proyecto de Almacenamiento de datos de entrenamientos con JavaScript.", 
-        ],
-        React: [
-            "Código de este portafolio.",
-            
-        ],
-        PHP: [
-            "Proyecto de videoclub, almacenamiento de datos con PHP.",
-            
-        ],
-        JAVA: [
-            "Proyecto de estadistica de infecciones por COVID-19 en Java (Simulacro).",
-        
-        ]
-    };
+const technologyIcons = {
+    HTML: FaHtml5,
+    CSS: FaCss3Alt,
+    JavaScript: FaJs,
+    React: FaReact,
+    PHP: FaPhp,
+    Laravel: SiLaravel,
+    Java: FaJava,
+    'Spring Boot': SiSpringboot,
+    OutSystems: OutSystemsTechIcon,
+}
 
-    const images = {
-        HTML: [
-            `${assetBase}HTML.png`,
-        ],
-        CSS: [
-            `${assetBase}CSS.png`,
-        ],
-        JavaScript: [
-            `${assetBase}JAVASCRIPT.png`,
-            `${assetBase}JAVASCRIPT1.png`,
-            `${assetBase}JAVASCRIPT2.png`,
-            `${assetBase}JAVASCRIPT3.png`,
-        ],
-        React: [
-            `${assetBase}REACT.png`,
-            `${assetBase}REACT1.png`,
-            `${assetBase}REACT2.png`,
-            `${assetBase}REACT3.png`,
-        ],
-        PHP: [
-            `${assetBase}PHP.png`,
-            `${assetBase}PHP1.png`,
-            `${assetBase}PHP2.png`,
-            `${assetBase}PHP3.png`,
-        ],
-        JAVA: [
-            `${assetBase}JAVA.png`,
-            `${assetBase}JAVA1.png`,
-            `${assetBase}JAVA2.png`,
-        ]
-    };
+function ProjectGlyph({ glyph }) {
+    if (glyph === 'outsystems') {
+        return <OutSystemsTechIcon />
+    }
 
-    useEffect(() => {
-        setCurrentImageIndex(0);
-        setIsModalOpen(false);
-        setModalImage('');
-    }, [selectedLanguage]);
+    if (glyph === 'stack') {
+        return <FaLayerGroup aria-hidden="true" />
+    }
 
-    const currentImages = images[selectedLanguage] || [];
-    const currentDescriptions = descriptions[selectedLanguage] || [];
+    if (glyph === 'award') {
+        return (
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2 9 7l-5 1 3.5 3.3-.8 4.7L12 14.9l5.3 1.1-.8-4.7L20 8l-5-1-3-5Z" fill="currentColor" />
+                <path d="M9.5 14.5 8 22l4-2 4 2-1.5-7.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+            </svg>
+        )
+    }
 
-    const handlePrevious = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? currentImages.length - 1 : prevIndex - 1));
-    };
-
-    const handleNext = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex === currentImages.length - 1 ? 0 : prevIndex + 1));
-    };
-
-    const handleImageClick = (imageSrc) => {
-        setModalImage(imageSrc);
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-        setModalImage('');
-    };
-
-    const showNavigation = currentImages.length > 1;
+    if (glyph === 'api') {
+        return (
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 7h12M6 12h12M6 17h12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                <circle cx="4" cy="7" r="1.4" fill="currentColor" />
+                <circle cx="20" cy="7" r="1.4" fill="currentColor" />
+                <circle cx="4" cy="12" r="1.4" fill="currentColor" />
+                <circle cx="20" cy="12" r="1.4" fill="currentColor" />
+                <circle cx="4" cy="17" r="1.4" fill="currentColor" />
+                <circle cx="20" cy="17" r="1.4" fill="currentColor" />
+            </svg>
+        )
+    }
 
     return (
-        <>
-            <section className="pf-projects">
-                <div className="pf-section-heading pf-projects-heading">
-                    <h2 className="pf-projects-title">Projects</h2>
-                    <p className="pf-projects-subtitle">Vista previa del trabajo por tecnología.</p>
-                </div>
-                {selectedLanguage ? (
-                    <div className="pf-projects-content">
-                        <div className="pf-projects-card">
-                            <div className="pf-projects-card__header">
-                                <p className="pf-projects-card__eyebrow">{selectedLanguage}</p>
-                                <h3>Proyectos relacionados con {selectedLanguage}</h3>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 8 4 12l4 4M16 8l4 4-4 4M14 5 10 19" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    )
+}
+
+export function ProyectsComponent() {
+    return (
+        <section className="pf-projects">
+            <div className="pf-section-heading pf-projects-heading">
+                <h2 className="pf-projects-title">Experiencia destacada</h2>
+                <p className="pf-projects-subtitle">Proyectos reales que resumen lo que he construido y el tipo de valor que aporto.</p>
+            </div>
+
+            <div className="pf-projects-grid">
+                {projects.map((project) => (
+                    <article className="pf-project-card" key={project.title}>
+                        <div className="pf-project-card__header">
+                            <div className="pf-project-card__glyph">
+                                <ProjectGlyph glyph={project.glyph} />
                             </div>
-
-                            <div className="pf-projects-content-contain">
-                                <div className="pf-projects-copy">
-                                    <p>{currentDescriptions[currentImageIndex] || "Descripción no disponible."}</p>
-                                    <p>Descripción del proyecto relacionado con {selectedLanguage}</p>
-                                </div>
-
-                                <button
-                                    type="button"
-                                    className="image-container"
-                                    onClick={() => handleImageClick(currentImages[currentImageIndex])}
-                                >
-                                    <img
-                                        src={currentImages[currentImageIndex]}
-                                        alt={`Imagen de ${selectedLanguage}`}
-                                        className="clickable-image"
-                                        loading="lazy"
-                                    />
-                                </button>
-
-                                {showNavigation && (
-                                    <div className="image-navigation">
-                                        <button className="nav-button" onClick={handlePrevious} type="button">
-                                            Anterior
-                                        </button>
-                                        <button className="nav-button" onClick={handleNext} type="button">
-                                            Siguiente
-                                        </button>
-                                    </div>
-                                )}
+                            <div>
+                                <p className="pf-project-card__eyebrow">{project.eyebrow}</p>
+                                <h3 className="pf-project-card__title">{project.title}</h3>
                             </div>
                         </div>
-                    </div>
-                ) : (
-                    <div className="pf-projects-empty">
-                        <h3>Selecciona una skill</h3>
-                        <p>Los proyectos y capturas aparecerán aquí para la tecnología que elijas.</p>
-                    </div>
-                )}
-            </section>
 
-            {/* Modal */}
-            {isModalOpen && (
-                <div className="modal-overlay" onClick={closeModal}>
-                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <button className="close-button" onClick={closeModal} type="button">Cerrar</button>
-                        <img src={modalImage} alt="Imagen ampliada" />
-                    </div>
-                </div>
-            )}
-        </>
-    );
+                        <div className="pf-project-card__summary-block">
+                            <p className="pf-project-card__summary">{project.summary}</p>
+                            <p className="pf-project-card__outcome">{project.outcome}</p>
+                        </div>
+
+                        <ul className="pf-project-card__stack" aria-label={`Tecnologías de ${project.title}`}>
+                            {project.stack.map((tech) => (
+                                <li key={tech} className="pf-project-card__tech">
+                                    {(() => {
+                                        const TechIcon = technologyIcons[tech]
+
+                                        return TechIcon ? <TechIcon aria-hidden="true" /> : null
+                                    })()}
+                                    <span>{tech}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </article>
+                ))}
+            </div>
+        </section>
+    )
 }
