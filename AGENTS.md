@@ -20,7 +20,7 @@ Personal portfolio site for Daniel García (Full Stack Developer). SPA built wit
 - `src/main.jsx` — entrypoint; mounts `<App />` into `#root`
 - `src/App.jsx` — shell layout with Header, Presentation, Proyects sections
 - `src/components/` — components with co-located CSS modules (e.g. `HeaderComponent.jsx` + `HeaderComponent.css`)
-- `public/assets/DanielGarcia.pdf` — CV download; referenced via `import.meta.env.BASE_URL`
+- `public/assets/CVDaniel.pdf` — CV download; referenced via `import.meta.env.BASE_URL`
 - `src/components/.jsx` — `LanguageCard` component using `PropTypes` (not in package.json; resolved transitively via React)
 
 ## Testing

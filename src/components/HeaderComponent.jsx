@@ -19,7 +19,7 @@ export function HeaderComponent() {
                     <li>
                         <IconComponent
                             label="CV"
-                            link={`${import.meta.env.BASE_URL}assets/DanielGarcia.pdf`} />
+                            link={`${import.meta.env.BASE_URL}assets/CVDaniel.pdf`} />
                     </li>
                     <li>
                         <IconComponent
