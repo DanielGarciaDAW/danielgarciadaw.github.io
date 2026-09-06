@@ -1,4 +1,5 @@
 import { FaFilePdf, FaGithub, FaLinkedinIn } from 'react-icons/fa6'
+import PropTypes from 'prop-types'
 
 const iconMap = {
   CV: FaFilePdf,
@@ -15,4 +16,9 @@ export function IconComponent({ label, link }) {
     </a>
   );
 }
+
+IconComponent.propTypes = {
+  label: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+};
 

@@ -25,7 +25,7 @@ export function PresentationComponent() {
                 <h1 className="pf-presentation-title">
                     Daniel García
                 </h1>
-                <p className="pf-presentation-dev">Desarrollador Full Stack</p>
+                <p className="pf-presentation-dev">Software Analyst · OutSystems Developer</p>
                 <div className="pf-presentation-pill-list" aria-label="Fortalezas profesionales">
                     {strengthPills.map((pill) => (
                         <span className="pf-presentation-pill" key={pill.label} data-hover-label={pill.hoverLabel}>

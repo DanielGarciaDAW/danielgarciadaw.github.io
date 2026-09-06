@@ -1,14 +1,15 @@
 import './ProyectsComponent.css';
 import { FaCss3Alt, FaHtml5, FaJava, FaJs, FaLayerGroup, FaPhp, FaReact } from 'react-icons/fa6'
+import PropTypes from 'prop-types'
 import { SiLaravel, SiSpringboot } from 'react-icons/si'
 
 const projects = [
     {
-        title: 'Analyst Engineer Development',
+        title: 'Software Analyst Developer',
         eyebrow: 'OutSystems · DXC Iberia',
-        summary: 'Analyst Engineer Development en el departamento de Legacy.',
-        outcome: `En junio de 2025 terminé mis prácticas tras transformar una aplicación clave de una de las bancas más importantes de España.
-Desde septiembre formo parte del equipo como una pieza de apoyo sólida en un GMS para una de las federaciones deportivas más grandes del mundo.`,
+        summary: 'Software Analyst en el departamento de Legacy Transform.',
+        outcome: `Análisis, diseño y evolución de aplicaciones empresariales en OutSystems 11, optimización de consultas SQL sobre PostgreSQL
+y modernización de sistemas legacy hacia arquitecturas low-code mantenibles, además de mentoría a perfiles junior del equipo.`,
         glyph: 'outsystems',
         stack: ['OutSystems'],
     },
@@ -102,6 +103,10 @@ function ProjectGlyph({ glyph }) {
             <path d="M8 8 4 12l4 4M16 8l4 4-4 4M14 5 10 19" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
     )
+}
+
+ProjectGlyph.propTypes = {
+    glyph: PropTypes.string.isRequired,
 }
 
 export function ProyectsComponent() {
